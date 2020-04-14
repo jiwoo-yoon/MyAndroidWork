@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="#6AF10F"
         android:text="첫번째 TextView"
-        android:textColor="#E91E63"
+        android:textColor="#E91E66"
         android:textSize="30sp" />
 
     <TextView
