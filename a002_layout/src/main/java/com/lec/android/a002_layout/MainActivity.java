@@ -13,5 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
         int ss = 100;
         String tt = "하하하하하핳";
+        char ch = 'a';
+        short s = 123;
     }
 }
