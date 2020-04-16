@@ -16,6 +16,8 @@ public class Main3Activity extends AppCompatActivity {
     int add = 2;
     Handler handler = new Handler();
 
+    boolean isTracking = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,35 +48,44 @@ public class Main3Activity extends AppCompatActivity {
             }
         });
 
-        //앱 시작시 Thread .. SeekBar 증가 시키기
+        // 앱 시작시 Thread .. SeekBar 증가 시키기
+        // fromUser 값 변화 주목!
         new Thread(new Runnable() {
+
             @Override
             public void run() {
+
                 int max = seekBar.getMax();
 
-                while (true){
-                    value = seekBar.getProgress() + add; //seekBar.setProgress(); //현재값
-                    if(value > max || value < 0){
-                        add = -add;
-                    }
+                while(true){
 
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            seekBar.setProgress(value);
+                    if(!isTracking){ // 트래킹 중이 아닐때만 SeekBar 이동
+                        value = seekBar.getProgress() + add;
+
+                        if(value > max || value < 0){
+                            add = -add;
                         }
-                    });
 
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                seekBar.setProgress(value);
+                            }
+                        });
+
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                    } // end if
+
+                } // end while
+            } // end run()
         }).start();
 
+    } // end onCreate()
 
 
-    }//end oncreate
-}//end main
+} // end Activity
