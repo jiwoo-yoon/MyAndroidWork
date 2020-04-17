@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         rv.setLayoutManager(layoutManager);
 
         infoAdapter = new InfoAdapter();
+        rv.setAdapter(infoAdapter);
 
         Button btnInsert = findViewById(R.id.btnInsert);
 
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                infoAdapter.addItem(new Info());
+                infoAdapter.addItem(new Info(et1.getText().toString(), et2.getText().toString(), et3.getText().toString()));
                 infoAdapter.notifyDataSetChanged();
             }
         });

@@ -55,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //앱 시작시 Thread를 사용하여 ProgressBar 증가시키기
-        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
+                //앱 시작시 Thread를 사용하여 ProgressBar 증가시키기
+                Thread t = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
                 while (true){
                     value2 = value2 + add2;
                     if(value2 > 100 || value2 < 0){
