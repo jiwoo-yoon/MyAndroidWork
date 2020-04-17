@@ -37,6 +37,8 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.ViewHolder> {
         return infos.size();
     }
 
+
+
     static class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView tvName, tvAge, tvAddr;

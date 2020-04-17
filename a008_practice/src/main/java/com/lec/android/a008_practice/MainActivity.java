@@ -7,9 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
+    EditText et1, et2, et3;
     InfoAdapter infoAdapter;
     RecyclerView rv;
 
@@ -26,11 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnInsert = findViewById(R.id.btnInsert);
 
+        et1 = findViewById(R.id.et1);
+        et2 = findViewById(R.id.et2);
+        et3 = findViewById(R.id.et3);
+
         btnInsert.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                infoAdapter.addItem(0, new Info());
+                infoAdapter.addItem(new Info());
                 infoAdapter.notifyDataSetChanged();
             }
         });
