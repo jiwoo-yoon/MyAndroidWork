@@ -53,6 +53,16 @@ CardView 의 attribute 속성은 위의 app 네임스페이스를 사용하게 �
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvAge" />
 
+            <Switch
+                android:id="@+id/swOnOff"
+                android:layout_width="104dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="On/Off"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
 
             <ImageButton
                 android:id="@+id/btnDelItem"
