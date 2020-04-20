@@ -18,13 +18,14 @@ public class InfoDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_detail);
 
+
         tvName = findViewById(R.id.tvName);
         tvAge = findViewById(R.id.tvAge);
         tvAddr = findViewById(R.id.tvAddr);
         btnBack = findViewById(R.id.btnBack);
 
         Intent intent = getIntent();
-        Info info = (Info)intent.getSerializableExtra("info");
+        final Info info = (Info)intent.getSerializableExtra("info");
 
         tvName.setText(info.getName());
         tvAge.setText(info.getAge());
