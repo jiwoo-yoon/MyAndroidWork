@@ -46,8 +46,8 @@ public class Main2Activity extends AppCompatActivity {
     TextView tvResult;
 
     //permission 관련
-    final String [] PERMISSIONS = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-    final int REQUEST_CODE = 100; // 비동기이기 때문에 코드값 필요
+    final String [] PERMISSIONS = {Manifest.permission.WRITE_EXTERNAL_STORAGE}; //READ 생략 가능
+    final int REQUEST_CODE = 100; // 비동기이기 때문에 코드값 필요, 앱이 필요한 권한과 이 권한 요청을 식별하기위해 지정한 정수의 요청코드가 필요 비동기이니깐
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,7 +138,7 @@ public class Main2Activity extends AppCompatActivity {
 
         //외부 메모리 상태
         if(Environment.MEDIA_MOUNTED.equals(state)){
-            //장착 뿐만 아니라 읽기, 쓰기가 가능하다 : mountde
+            //장착 뿐만 아니라 읽기, 쓰기가 가능하다 : mounted
             msg = "외부메모리 읽기 쓰기 모두가능";
             Log.d("myapp", msg);
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
